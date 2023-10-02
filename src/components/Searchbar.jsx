@@ -1,0 +1,175 @@
+import React, { useState, useEffect } from 'react';
+import { Search } from '@material-ui/icons';
+import styled from 'styled-components';
+import axios from 'axios';
+
+const Container = styled.div`
+  background-color: #f4f4f4;
+  padding: 20px;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+const FilterContainer = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 25%;
+  }
+`;
+
+const FilterTitle = styled.div`
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+`;
+
+const FilterSelect = styled.select`
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+`;
+
+const Right = styled.div`
+  width: 100%;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+  @media (max-width: 768px) {
+    margin-top: 1rem;
+  }
+`;
+
+const SearchContainer = styled.div`
+  display: flex;
+
+  align-items: center;
+  gap: 0.1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  background-color: white;
+`;
+
+const Input = styled.input`
+  border: none;
+  flex: 1;
+  outline: none;
+`;
+
+const SearchButton = styled.button`
+  background-color: #007bff;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: end;
+  flex-direction: row;
+  padding: 0.5rem 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+`;
+
+const SearchBars = (props) => {
+  const [filters, setFilters] = useState({});
+  const [uniqueCategories, setUniqueCategories] = useState([]);
+  const [uniqueAuthors, setUniqueAuthors] = useState([]);
+  const [Categories, setCategories] = useState([]);
+  const [Author, setAuthor] = useState([]);
+  const { onCreate } = props;
+
+  const handleOnCreate = (e) => {
+    const { name, value } = e.target;
+    setFilters({
+      ...filters,
+      [name]: value,
+    });
+    onCreate({ ...filters, [name]: value });
+  
+ 
+  };
+ 
+  useEffect(() => {
+    const getFilteredData = async () => {
+      try {
+        const res = await axios.get(
+          //if there is an author and category, fetch the category and author selected
+         
+             `http://localhost:5000/api/products`
+            
+        );
+       
+// maps the category property of the object which is an array of an array and breaks it into a singular array. A new set of array is created containing a unique set of categories avoiding repretion
+        // Filter unique categories and authors
+        const uniqueCat = Array.from(new Set(res.data.map((item) => item.Categories).flat()));
+        setUniqueCategories(uniqueCat);
+
+        const uniqueAuth = Array.from(new Set(res.data.map((item) => item.Author)));
+        setUniqueAuthors(uniqueAuth);
+setAuthor(res.data)
+      
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getFilteredData();
+    //Dependencies of the useEffect
+  }, []);
+console.log(filters);
+  return (
+    <Container>
+      <Wrapper>
+        <FilterContainer>
+          <FilterTitle>BOOK CATEGORIES</FilterTitle>
+          <FilterSelect name="Categories" onChange={handleOnCreate}>
+            <option value={Categories}>All Categories</option>
+            {uniqueCategories.map((items) => (
+              <option key={items} value={items}>
+                {items}
+              </option>
+            ))}
+          </FilterSelect>
+        </FilterContainer>
+        <FilterContainer>
+          <FilterTitle>AUTHOR</FilterTitle>
+          <FilterSelect name="Author" onChange={handleOnCreate}>
+            <option value="">All Authors</option>
+            {uniqueAuthors.map((items) => (
+              <option key={items} value={items}>
+                {items}
+              </option>
+            ))}
+          </FilterSelect>
+        </FilterContainer>
+
+        <FilterContainer>
+          <Right>
+            <SearchContainer>
+              <Input placeholder="Search for books..." />
+              <SearchButton>
+                <Search />
+              </SearchButton>
+            </SearchContainer>
+          </Right>
+        </FilterContainer>
+      </Wrapper>
+    </Container>
+  );
+};
+
+export default SearchBars;
