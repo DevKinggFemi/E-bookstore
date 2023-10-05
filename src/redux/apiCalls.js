@@ -6,6 +6,7 @@ import { updateCart} from "./cartRedux";
 export const login = async (dispatch, user) =>{
 
 dispatch (loginStart());
+console.log(user)
 try {
     const res = await publicRequest.post('/userauthentication/login', user) 
     dispatch(loginSuccess(res.data));

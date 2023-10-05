@@ -104,22 +104,24 @@ const BackToHomepageButton = styled.button`
 
 const Login = () => {
   const { isFetching, error } = useSelector((state) => state.user);
-  const [isLoading, setIsLoading] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [register, setRegister] = useState(false);
-  //const userId = localStorage.getItem('userId') ;
-  // const TOKEN =  localStorage.getItem('TOKEN') ;
+ 
   const dispatch = useDispatch();
   
   
-  const handleClick = () => {
-    login(dispatch, { username, password });
-    
-  fetchCart(dispatch);
+  const handleClick = async () => {
+    try {
+      await login(dispatch, { username, password });
+      await dispatch(fetchCart());
+    } catch (error) {
+     
+      console.error("Error:", error);
+    }
   };
-
+  
   const handleRegister = () => {
     setRegister(true);
   };
