@@ -2,12 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { useRef, useEffect, useState } from 'react';
 import { register } from 'swiper/element/bundle';
-import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import { publicRequest } from '../requestMethods';
 
 const Container = styled.div`
-  padding: 10px; /* Add padding for spacing */
+  padding: 10px; 
   overflow: hidden;
 `;
 
@@ -31,8 +30,7 @@ const Wrapper = styled.div`
   justify-content: space-between;
   text-align: center;
   width: 100%;
-  max-width: 100%; /* Update max-width for responsiveness */
-  /* height: 400px; Remove fixed height for auto-height */
+  max-width: 100%; 
   border-radius: 10px;
   margin: 0 auto;
 `;
@@ -57,12 +55,12 @@ const Price = styled.div`
 
 
 const CartButton = styled.button`
-  background-color: #0074CC; /* Blue color */
+  background-color: #0074CC; 
   margin-top: 5px;
   border: none;
-  color: white; /* Text color */
+  color: white; 
   font-weight: bold;
-  padding: 10px 20px; /* Adjust padding as needed */
+  padding: 10px 20px; 
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -160,8 +158,7 @@ const Slidebar = (props) => {
 <Container>
        <swiper-container
       ref={swiperElRef}
-   slides-per-view= {slidesPerView}
-   
+   slides-per-view= {slidesPerView}   
       navigation="true"
       pagination="true"
      

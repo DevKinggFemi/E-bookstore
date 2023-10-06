@@ -30,7 +30,7 @@ const Texting = styled.div`
 
 const TextWrapper = styled.div`
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 2rem; /* 40px */
+  font-size: 2rem; 
   color: #FFFFF0;
   margin-bottom: 20px;
 `;
@@ -51,7 +51,7 @@ const Button = styled.button`
   transition: 0.3s;
 
   &:hover {
-    font-size: 1.5rem; /* 30px */
+    font-size: 1.5rem; 
     width: 270px;
     height: 53px;
     background-color: rgb(255, 166, 0);

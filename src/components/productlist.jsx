@@ -51,7 +51,7 @@ const ProductImage = styled.img`
   height: 150px;
   object-fit: cover;
   border-radius: 5px;
-  border: 1px solid #4e3838; /* Darker border color */
+  border: 1px solid #4e3838; 
 `;
 
 const ProductInfo = styled.div`

@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
 
-// Keyframes for the success animation
+
 const bounceIn = keyframes`
   0%, 20%, 50%, 80%, 100% {
     transform: translateY(0);
@@ -24,7 +24,7 @@ const Container = styled.div`
 
 const SuccessMessage = styled.div`
   font-size: 24px;
-  color: #4CAF50; /* Green color */
+  color: #4CAF50;
   animation: ${bounceIn} 1.5s ease infinite;
 `;
 
