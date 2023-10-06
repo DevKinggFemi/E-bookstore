@@ -57,11 +57,16 @@ const Price = styled.div`
 
 
 const CartButton = styled.button`
-  background-color:  #1111b1d1;
+  background-color: #0074CC; /* Blue color */
   margin-top: 5px;
-border:none;
-`;
-
+  border: none;
+  color: white; /* Text color */
+  font-weight: bold;
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+`
 const LinkButtons = styled(NavLink)`
   text-decoration: none;
   color: black;
@@ -137,17 +142,29 @@ const Slidebar = (props) => {
      setNumFilteredProducts(products.length)
     }
   }, [products, onFilter]);
+  const slidesPerView = getSlidesPerView(NumFilteredProducts);
 
+  function getSlidesPerView(numFilteredProducts) {
+    if (window.innerWidth <= 768) {
+      return 1;
+    } else if (numFilteredProducts > 4) {
+      return 3;
+    } else if (numFilteredProducts === 0) {
+      return 1;
+    } else {
+      return numFilteredProducts;
+    }
+  }
   return (
     
 <Container>
        <swiper-container
       ref={swiperElRef}
-   slides-per-view= {NumFilteredProducts >4  ? 3 : NumFilteredProducts === 0 ? 1 : NumFilteredProducts}
+   slides-per-view= {slidesPerView}
    
       navigation="true"
       pagination="true"
-      scrollbar="true"
+     
     >
       
            {  NumFilteredProducts != 0 ? (filteredProducts.map((items) => (

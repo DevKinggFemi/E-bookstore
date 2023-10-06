@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { userRequest} from '../requestMethods';
 import { removeProduct } from '../redux/cartRedux';
-
+import { user } from '../redux/userRedux';
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div`
@@ -117,6 +116,7 @@ const SummaryTitle = styled.h2`
 const CartItems = () => {
   const cart = useSelector((state) => state.cart);
   const [stripeToken, setStripeToken] = useState(null);
+  const users = useSelector(user);
   const dispatch = useDispatch();
   const TOKEN = localStorage.getItem('TOKEN');
   const navigate = useNavigate();
@@ -190,6 +190,7 @@ const CartItems = () => {
           description={`Your total is $${cart.total}`}
           amount={cart.total * 100}
           token={onToken}
+          disabled ={!user || cart.total === 0}
         />
       </SummaryContainer>
     </Container>

@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { Register, login } from '../redux/apiCalls';
 import bookimage from "../storage/d5.png";
+
+import { loginFailure } from '../redux/userRedux';
 import { fetchCart } from '../redux/apiCalls';
 const Container = styled.div`
   width: 100vw;
@@ -146,7 +148,7 @@ const Login = () => {
           )}
         </SearchContainer>
         <Agreement> I agree with the Terms of Service and Privacy <b>Policy</b></Agreement>
-        {error === true && <Agreement>Unable to login</Agreement>}
+        {error ? <Agreement>Unable to login</Agreement> : null}
         {register === false ? (
           <>
             <Button onClick={handleRegister}>Register</Button>

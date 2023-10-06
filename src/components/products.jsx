@@ -11,13 +11,11 @@ import {
 import { Badge } from '@material-ui/core';
 import { ShoppingCartOutlined } from '@material-ui/icons';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import { addProduct } from '../redux/cartRedux';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from './navBar';
 import { user } from '../redux/userRedux';
 import { publicRequest, userRequest } from '../requestMethods';
-
 const Container = styled.div`
   width: 100%;
 `;
@@ -154,6 +152,14 @@ const CartIcon = styled(ShoppingCartOutlined)`
   font-size: 15px;
   }
 `;
+const Notification = styled.div`
+ 
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+`;
+
 
 const QuantityContainer = styled.div`
   display: flex;
@@ -193,10 +199,12 @@ const Products = () => {
   const [product, setProduct] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [Cartquantity, setCartQuantity] = useState(1);
+  const [cartNotification, setCartNotification] = useState(false);
   const TOKEN = localStorage.getItem('TOKEN');
   const userId = localStorage.getItem('userId');
   const dispatch = useDispatch();
   const users = useSelector(user);
+
   const cartProduct = useSelector((state) => state.user.products);
   
 
@@ -237,7 +245,11 @@ const Products = () => {
   };
 
   const handleClick =  () => {   
-      dispatch(addProduct({ ...product,ProductId :product._id ,quantity }));
+    setCartNotification(true); 
+      setTimeout(() => {
+      setCartNotification(false);
+    }, 5000);
+    dispatch(addProduct({ ...product,ProductId :product._id ,quantity }));
        createItem({
           userId: userId,
           products: [
@@ -304,6 +316,16 @@ const Products = () => {
                   <CartIcon />
                 </Badge>
               </CartButton>
+              {!users && (
+          <Notification style={{ color: '#f13f39' }}>
+            Please log in to add items to your cart.
+          </Notification>
+        )}
+              {cartNotification && (
+          <Notification  style={{ color: '#30cf80' }} >
+           {product.Title} has been added to to the cart!
+          </Notification>
+        )}
             </CartContainer>
           </ButtonContainer>
         </Desc>
