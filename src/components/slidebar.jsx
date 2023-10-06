@@ -161,7 +161,7 @@ const Slidebar = (props) => {
    slides-per-view= {slidesPerView}   
       navigation="true"
       pagination="true"
-     
+      scrollbar="true"
     >
       
            {  NumFilteredProducts != 0 ? (filteredProducts.map((items) => (
