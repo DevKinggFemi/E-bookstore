@@ -4,13 +4,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Register, login } from '../redux/apiCalls';
 import bookimage from "../storage/d5.png";
 
-import { loginFailure } from '../redux/userRedux';
+
 import { fetchCart } from '../redux/apiCalls';
 const Container = styled.div`
   width: 100vw;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
+  max-width: 2800px;
   display: flex;
   background-image: url(${bookimage});
 `;
