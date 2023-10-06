@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search } from '@material-ui/icons';
 import styled from 'styled-components';
-import axios from 'axios';
+import { publicRequest } from '../requestMethods';
 
 const Container = styled.div`
   background-color: #f4f4f4;
@@ -107,10 +107,9 @@ const SearchBars = (props) => {
   useEffect(() => {
     const getFilteredData = async () => {
       try {
-        const res = await axios.get(
+        const res = await publicRequest.get(
           //if there is an author and category, fetch the category and author selected
-         
-             `http://localhost:5000/api/products`
+             `/products`
             
         );
        
