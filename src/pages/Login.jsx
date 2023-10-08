@@ -118,7 +118,7 @@ const Login = () => {
   const handleClick = async () => {
     try {
       await login(dispatch, { username, password });
-      await dispatch(fetchCart());
+        fetchCart(dispatch);
     } catch (error) {
      
       console.error("Error:", error);
