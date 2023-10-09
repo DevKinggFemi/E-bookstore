@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import { publicRequest } from '../requestMethods';
 
 const Container = styled.div`
-  background-color: #f4f4f4;
-  padding: 20px;
+  background-color: #f4f4f4; 
+  margin-left: 8px;
+  overflow: hidden;
 `;
 
 const Wrapper = styled.div`
@@ -14,6 +15,9 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  width: 100%;
+  margin-left: 8px;
+  
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -25,7 +29,6 @@ const FilterContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-
   @media (min-width: 768px) {
     width: 25%;
   }
@@ -45,26 +48,18 @@ const FilterSelect = styled.select`
   background-color: white;
 `;
 
-const Right = styled.div`
-  width: 100%;
-  height: 25px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: white;
-  @media (max-width: 768px) {
-    margin-top: 1rem;
-  }
-`;
 
 const SearchContainer = styled.div`
   display: flex;
-
   align-items: center;
   gap: 0.1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 0.5rem;
   background-color: white;
+
+  margin-top: 25px;
+  margin-right: 20px;
 `;
 
 const Input = styled.input`
@@ -127,9 +122,9 @@ setAuthor(res.data)
       }
     };
     getFilteredData();
-    //Dependencies of the useEffect
+    
   }, []);
-console.log(filters);
+
   return (
     <Container>
       <Wrapper>
@@ -157,14 +152,14 @@ console.log(filters);
         </FilterContainer>
 
         <FilterContainer>
-          <Right>
+          
             <SearchContainer>
               <Input placeholder="Search for books..." />
               <SearchButton>
                 <Search />
               </SearchButton>
             </SearchContainer>
-          </Right>
+      
         </FilterContainer>
       </Wrapper>
     </Container>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import { keyframes } from 'styled-components';
 import {
   Facebook,
   Twitter,
@@ -17,7 +18,8 @@ import Navbar from './navBar';
 import { user } from '../redux/userRedux';
 import { publicRequest, userRequest } from '../requestMethods';
 const Container = styled.div`
-  width: 100%;
+width: 100%;
+
 `;
 
 const Wrapper = styled.div`
@@ -27,6 +29,7 @@ const Wrapper = styled.div`
   padding: 20px;
   max-width: 2800px;
   margin: 0 auto;
+  overflow: hidden;
 `;
 
 const Image = styled.img`
@@ -37,7 +40,7 @@ const Image = styled.img`
 
 const Desc = styled.div`
   width: 60%;
-  padding-left: 20px;
+  padding-left: 30px;
 `;
 
 const DescTitle = styled.span`
@@ -104,13 +107,10 @@ const BuyButton = styled.button`
   color: white;
   font-weight: bold;
   transition: background-color 0.3s;
-  
   cursor: pointer;
   &:hover {
     background-color: #ff8000;
   }
-
-
 `;
 
 const CartContainer = styled.div`
@@ -120,7 +120,6 @@ const CartContainer = styled.div`
   @media (max-width: 768px) {
     margin-left: 5px;
     }
-  
 `;
 
 const CartButton = styled.button`
@@ -152,13 +151,45 @@ const CartIcon = styled(ShoppingCartOutlined)`
   font-size: 15px;
   }
 `;
+
+
+// Define a keyframe for the animation
+const slideIn = keyframes`
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
 const Notification = styled.div`
- 
+width: 100px;
   color: white;
+  margin-left: 8cm;
+  margin-top: 15px;
   padding: 10px;
   text-align: center;
   font-weight: bold;
+  background-color: #edf1ef; /* Background color */
+  transform: translateX(-50%);
+  border-radius: 5px;
+  animation: ${slideIn} 0.5s ease forwards; /* Apply the animation */
+  opacity: 0; /* Initially hidden */
+
+  /* Add some additional styles for a better look */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 999; /* Ensure it's on top of other elements */
+  @media (max-width: 768px) {
+    width: 80px;
+    font-size: 10px;
+    margin-left: 4cm;
+  }
 `;
+
+
 
 
 const QuantityContainer = styled.div`
@@ -223,8 +254,6 @@ const Products = () => {
   
     const createItem = async (userItems) => {
       try {
-       
-        
         const res = await userRequest.put("/cart/create",
           userItems
         );
@@ -316,7 +345,10 @@ const Products = () => {
                   <CartIcon />
                 </Badge>
               </CartButton>
-              {!users && (
+        
+            </CartContainer>
+          </ButtonContainer>
+          {!users && (
           <Notification style={{ color: '#f13f39' }}>
             Please log in to add items to your cart.
           </Notification>
@@ -326,8 +358,6 @@ const Products = () => {
            {product.Title} has been added to to the cart!
           </Notification>
         )}
-            </CartContainer>
-          </ButtonContainer>
         </Desc>
       </Wrapper>
     </Container>

@@ -152,7 +152,7 @@ const CartItems = () => {
        
         
       try {
-          console.log(ProductId)
+
         const res = await userRequest.delete(`/cart/${userId}/${ProductId}`);
       } catch (err) {}
     };

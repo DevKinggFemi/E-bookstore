@@ -48,7 +48,7 @@ const SlideWrapper = styled.div`
 const Bookshop = () => {
   const location = useLocation();
   const locationCategory = location.pathname.split('/')[2]
-  console.log(locationCategory);
+  
   const [selectedCategories, setSelectedCategories] = useState('');
   return (
     <Container>

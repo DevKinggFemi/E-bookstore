@@ -9,41 +9,39 @@ import { logOut, user } from '../redux/userRedux';
 import { clearCart } from '../redux/cartRedux';
 
 const Container = styled.div`
-  background-color: #200909;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 2800px;
-  margin: 0 auto;
-`;
+  background-color: #351010;  
 
+`;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
   width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
+
 `;
 
 const Logo = styled.img`
+
   width: 120px;
-  height: 120px;
+  height: 90px;
 
   @media screen and (max-width: 768px) {
     width: 80px;
     height: 80px;
-
-    margin-bottom: 1rem;
+ 
   }
 `;
 
 const Topright = styled.div`
   display: flex;
   align-items: center;
+ padding-right: 20px ;
+`;
+const Left = styled.div`
+  width: 30%;
 `;
 
 const NavbarItem = styled(NavLink)`
+margin-top: 5px;
   margin-right: 1.5rem;
   font-size: 18px;
   font-family: cursive;
@@ -74,13 +72,11 @@ const CartIcon = styled(ShoppingCartOutlined)`
 
 const HamburgerMenu = styled.div`
   display: none;
-
   @media screen and (max-width: 768px) {
     display: block;
     font-size: 20px;
     cursor: pointer;
     color:white;
-
   }
 `;
 
@@ -100,7 +96,10 @@ const Navbar = () => {
   return (
     <Container>
       <Wrapper>
+        <Left>
+
         <Logo src={bookimage} alt="logo" />
+        </Left>
         <Topright>
           <HamburgerMenu onClick={() => setMenuOpen(!menuOpen)}>
             <Menu />

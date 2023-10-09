@@ -10,14 +10,13 @@ import {BrowserRouter , Routes,Route,  Navigate } from "react-router-dom";
 import CANCEL from "./components/cancel";
 import { useSelector } from "react-redux";
 import { user } from "./redux/userRedux";
-
+import styled from "styled-components";
 function App() {
   const User = useSelector(state => state.user.currentUser);
-  console.log(User)
+  
 return  (
   <BrowserRouter>
 <Routes>
-  
   <Route exact path="/" element={<Home/>}></Route>
   <Route path="/bookshop" element={<Bookshop/>}></Route>
   <Route path="/bookshop/:Categories" element={<Bookshop/>}></Route>
@@ -29,6 +28,8 @@ return  (
   <Route path="/Items/cancel" element={<CANCEL/>}></Route>
   </Routes>
   </BrowserRouter>
+  
+
 )
 };
 

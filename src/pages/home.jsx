@@ -6,7 +6,10 @@ import styled from 'styled-components';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Footer from "../components/footer"
+import Sidebar from '../components/Sidebar';
+import SearchBars from '../components/Searchbar';
 const Container = styled.div`
+max-width: 2800px;
 `
 const Home = () => {
   const location = useLocation();
@@ -18,8 +21,8 @@ const [filters, setFilters] = useState('');
       <Container>
       <Navbar/>
       <Announcement/>
-      <Searchbars onCreate = {setFilters} />
-      <Slidebar onFilter = {filters} onCat= {cat}/>
+      <Searchbars/>
+      <Slidebar/>
       <Footer/>
         </Container>
     </div>
