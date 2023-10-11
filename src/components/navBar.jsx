@@ -89,8 +89,10 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(true);
 
   const handleClick = () => {
+    localStorage.removeItem("TOKEN");
     dispatch(logOut());
     dispatch(clearCart());
+    
   };
 
   return (

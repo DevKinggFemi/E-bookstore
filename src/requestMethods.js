@@ -1,15 +1,14 @@
-
 import axios from "axios";
-
-const TOKEN = localStorage.getItem('TOKEN');
-const BASE_URL = "https://e-bookstore-server-side.vercel.app/api/";
-
+axios.defaults.baseURL = "http://localhost:5000/api/";
+axios.interceptors.request.use(function (config){
+    config.headers.token = `Bearer ${localStorage.getItem("TOKEN")}`;
+    return config;
+})
+const BASE_URL = "http://localhost:5000/api/";
 
 export const publicRequest = axios.create ({
     baseURL:BASE_URL,
 })
 export const userRequest = axios.create ({
     baseURL:BASE_URL,
- headers :{ token: `Bearer ${TOKEN}`},
-       
 })

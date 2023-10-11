@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Navbar from './navBar';
 import { user } from '../redux/userRedux';
 import { publicRequest, userRequest } from '../requestMethods';
+import axios from 'axios';
 const Container = styled.div`
 width: 100%;
 
@@ -41,6 +42,9 @@ const Image = styled.img`
 const Desc = styled.div`
   width: 60%;
   padding-left: 30px;
+  @media (max-width: 768px) {
+    padding-left: 8px;
+  }
 `;
 
 const DescTitle = styled.span`
@@ -107,6 +111,10 @@ const BuyButton = styled.button`
   color: white;
   font-weight: bold;
   transition: background-color 0.3s;
+  @media (max-width: 768px) {
+    width: 90px;
+  height: 80px;
+  }
   cursor: pointer;
   &:hover {
     background-color: #ff8000;
@@ -116,9 +124,9 @@ const BuyButton = styled.button`
 const CartContainer = styled.div`
   display: flex;
   align-items: center;
-  margin-left: 20px;
+ 
   @media (max-width: 768px) {
-    margin-left: 5px;
+  
     }
 `;
 
@@ -135,8 +143,11 @@ const CartButton = styled.button`
   justify-content: center;
   cursor: pointer;
   @media (max-width: 768px) {
-    width: 100px;
-  height: 50px;
+    width: 80px;
+  height: 80px;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
   }
   transition: background-color 0.3s;
   &:hover {
@@ -149,6 +160,7 @@ const CartIcon = styled(ShoppingCartOutlined)`
   margin-right: 10px;
   @media (max-width: 768px) {
   font-size: 15px;
+  
   }
 `;
 
@@ -185,7 +197,7 @@ width: 100px;
   @media (max-width: 768px) {
     width: 80px;
     font-size: 10px;
-    margin-left: 4cm;
+    margin-left: 3cm;
   }
 `;
 
@@ -199,6 +211,7 @@ const QuantityContainer = styled.div`
   @media (max-width: 768px) {
     margin-left: 5px;
     margin-right: 5px;
+    
     }
 `;
 
@@ -254,8 +267,9 @@ const Products = () => {
   
     const createItem = async (userItems) => {
       try {
-        const res = await userRequest.put("/cart/create",
-          userItems
+        const TOKEN = localStorage.getItem("TOKEN")
+        const res = await axios.put("/cart/create",
+          userItems, 
         );
         console.log(res.data)
       } catch (err) {}
@@ -324,7 +338,7 @@ const Products = () => {
           <DescBook>{product.Des}</DescBook>
           <Price>${product.Price}</Price>
           <ButtonContainer>
-            <BuyButton>Buy Now</BuyButton>
+            
             <CartContainer>
               <QuantityContainer>
                 <QuantityButton

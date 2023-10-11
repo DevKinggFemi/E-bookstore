@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { userRequest} from '../requestMethods';
 import { removeProduct } from '../redux/cartRedux';
 import { user } from '../redux/userRedux';
+import axios from 'axios';
 const KEY = process.env.REACT_APP_STRIPE;
 
 const Container = styled.div`
@@ -127,7 +128,7 @@ const CartItems = () => {
   useEffect(() => {
     const makeRequest = async () => {
       try {
-        const res = await userRequest.post('/checkout/payment', {
+        const res = await axios.post('/checkout/payment', {
           tokenId: stripeToken.id,
           amount: cart.total,
           currency: "usd"
@@ -153,7 +154,7 @@ const CartItems = () => {
         
       try {
 
-        const res = await userRequest.delete(`/cart/${userId}/${ProductId}`);
+        const res = await axios.delete(`/cart/${userId}/${ProductId}`);
       } catch (err) {}
     };
  

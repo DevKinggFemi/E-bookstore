@@ -28,6 +28,7 @@ const userSlice = createSlice({
         state.isFetching = false;
         state.currentUser = action.payload;
       } 
+      
         }
     
 })

@@ -115,14 +115,16 @@ const Login = () => {
   const dispatch = useDispatch();
   
   
-  const handleClick = async () => {
-    try {
-      await login(dispatch, { username, password });
+  const handleClick = () => {
+    login(dispatch, { username, password })
+      .then(() => {
+        // The user has successfully logged in; now fetch the cart
         fetchCart(dispatch);
-    } catch (error) {
-     
-      console.error("Error:", error);
-    }
+      })
+      .catch((error) => {
+        // Handle login errors here if needed
+        console.error('Login failed:', error);
+      });
   };
   
   const handleRegister = () => {
