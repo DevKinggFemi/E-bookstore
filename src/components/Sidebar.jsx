@@ -4,23 +4,29 @@ import styled from 'styled-components';
 
 const Container = styled.div`
   background-color: #f5f5f5;
-  padding: 20px;
-  max-width: 80%;
-  overflow: auto; 
+  padding: 10px;
+  width: 300px ;
   @media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%
+    padding: 5px;
+  width: 150px ;
   }
 `;
 
 const Text = styled.div`
   font-family: cursive;
-  font-weight: bold;
+font-size: 12px;
   text-align: center;
+
 `;
 
+const SubTextContainer = styled.div `
+display: flex;
+flex-direction: column;
+
+
+`;
 const Subtext = styled.button`
+text-align: center;
   margin-top: 10px;
   cursor: pointer;
   width: 100%;
@@ -65,16 +71,19 @@ const Sidebar = ({ onCreate }) => {
     <Container>
       <Text><p>STORE</p>
          <p>CATEGORIES</p></Text>
-      <ul>
+      
+         <SubTextContainer>
+
         {bookStoreCategories.map((BookshopCategories) => (
           <Subtext
-            key={BookshopCategories}
-            onClick={() => handleChange(BookshopCategories)}
+          key={BookshopCategories}
+          onClick={() => handleChange(BookshopCategories)}
           >
             {BookshopCategories}
           </Subtext>
         ))}
-      </ul>
+        </SubTextContainer>
+    
     </Container>
   );
 };

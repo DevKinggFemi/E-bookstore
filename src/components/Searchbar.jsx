@@ -35,6 +35,7 @@ const FilterContainer = styled.div`
 `;
 
 const FilterTitle = styled.div`
+margin-top: 10px;
   font-weight: bold;
   color: #333;
   margin-bottom: 0.5rem;

@@ -6,10 +6,10 @@ import Productlist from "../components/productlist";
 import { useLocation } from "react-router-dom";
 import Footer from "../components/footer"
 const Container = styled.div`
-  max-width: 1350px;
+  max-width: 2800px;
   width: 100%;
   @media screen and (max-width: 768px) {
-    max-width: 100%;
+   
   }
 `;
 
@@ -18,10 +18,10 @@ const ContentWrapper = styled.div`
 `;
 
 const SidebarWrapper = styled.div`
-  max-width: 50%;
+  width: 40%;
   background-color: hsl(0, 0%, 100%);
   @media screen and (max-width: 768px) {
-    max-width: 50%;
+    width: 30%;
     align-items: center;
   }
 `;
@@ -31,16 +31,17 @@ const MainContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
 `;
 
 
 
 const SlideWrapper = styled.div`
-  margin-left: -6%;
+width: 100%;
   margin-top: 20px;
    @media screen and (max-width: 768px) {
-    max-width: 50%;
-    margin-left: 0;
+    width: 40%;
+   
   }
 `;
 

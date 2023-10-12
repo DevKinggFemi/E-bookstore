@@ -2,14 +2,13 @@ import Home from "./pages/home";
 import Bookshop from "./pages/bookshop";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import NewsLetter from "./pages/NewsLetter";
+
 import Items from "./pages/Items";
 import Products from "../src/components/products";
 import Success from "./components/Success";
 import {BrowserRouter , Routes,Route,  Navigate } from "react-router-dom";
 import CANCEL from "./components/cancel";
 import { useSelector } from "react-redux";
-import { user } from "./redux/userRedux";
 import styled from "styled-components";
 function App() {
   const User = useSelector(state => state.user.currentUser);

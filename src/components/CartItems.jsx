@@ -153,7 +153,6 @@ const CartItems = () => {
        
         
       try {
-
         const res = await axios.delete(`/cart/${userId}/${ProductId}`);
       } catch (err) {}
     };

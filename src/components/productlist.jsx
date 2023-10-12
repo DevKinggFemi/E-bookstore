@@ -7,29 +7,20 @@ import { publicRequest } from '../requestMethods';
 const Container = styled.div`
   background-color: #ffffff; 
   color: #6e1111; 
-  max-height: auto;
-  max-width: 100%;
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-  }
+ 
 `;
 const Wrapper = styled.div`
   padding: 40px;
   display: flex;
   flex-wrap: wrap; 
-  gap: 70px; 
-  max-height: auto;
+  gap: 10px; 
   
- max-width:100%;
  @media screen and (max-width: 768px) {
-    flex-direction: column;
+    padding: 10px;
     align-items: center;
-    max-width: 5cm;
-    gap: 5px; 
+    gap: 10px; 
+   width: 200px;
   }
-
 `;
 
 const ProductWrapper = styled.div`
@@ -37,11 +28,13 @@ const ProductWrapper = styled.div`
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
-  width: 80%;
+  width: 100%;
   @media screen and (max-width: 768px) {
     flex-direction: column;
+    margin-bottom: 5px;
+    gap: 10px;
+   margin-right: 15px;
     
-
   }
 
 `;
@@ -52,36 +45,62 @@ const ProductImage = styled.img`
   object-fit: cover;
   border-radius: 5px;
   border: 1px solid #4e3838; 
+  @media screen and (max-width: 768px) {
+    width: 75px;
+    height: 90px;
+
+   
+  }
 `;
 
 const ProductInfo = styled.div`
   display: flex;
   flex-direction: column;
   column-gap: 60px;
+  @media screen and (max-width: 768px) {
+    
+  }
 `;
 
 const ProductTitle = styled.h3`
   font-size: 15px;
   margin: 0;
+  width: 100px;
+  @media screen and (max-width: 768px) {
+    font-size: 13px;
+    width: 80px;
+  }
 `;
 
 const BookCategory = styled.p`
   font-size: 14px;
   margin:  0;
+  width: 50px;
   max-width: 30px; 
   white-space: nowrap; 
   text-overflow: ellipsis;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const Author = styled.p`
-  font-size: 14px;
+  font-size: 12px;
   margin: 5px 0;
+  width: 50px;
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
+
 `;
 
 const Price = styled.p`
   font-size: 16px;
   font-weight: bold;
   margin: 5px 0;
+  @media screen and (max-width: 768px) {
+    margin: 0 0;
+  }
 `;
 const LinkButtons = styled(NavLink)`
 text-decoration: none;
@@ -111,7 +130,7 @@ const ProductList = ({selectCategories, locationCategory}) => {
           const dateB = new Date(b.createdAt);
           return dateB - dateA;
         }));
-        setNewProducts (sortedProducts.slice(0, 6))
+        setNewProducts (sortedProducts.slice(0, 4))
      
       }catch (err) {}
     };

@@ -14,7 +14,6 @@ try {
  localStorage.setItem('userId',res.data._id) ;
   localStorage.setItem('TOKEN',res.data.accessToken) ;
  const TOKEN = localStorage.getItem('TOKEN')
- console.log(TOKEN);
  
 }catch (err){
     dispatch(loginFailure())
