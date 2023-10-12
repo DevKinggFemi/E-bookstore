@@ -38,10 +38,9 @@ const MainContentWrapper = styled.div`
 
 const SlideWrapper = styled.div`
 width: 100%;
-  margin-top: 20px;
-   @media screen and (max-width: 768px) {
+margin-top: 20px;
+@media screen and (max-width: 768px) {
     width: 40%;
-   
   }
 `;
 

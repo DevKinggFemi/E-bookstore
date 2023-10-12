@@ -266,12 +266,11 @@ const Products = () => {
 
   
     const createItem = async (userItems) => {
-      try {
-        const TOKEN = localStorage.getItem("TOKEN")
-        const res = await axios.put("/cart/create",
+      const userId = localStorage.getItem('userId');
+      try { 
+        const res = await axios.put(`/cart/create/${userId}`,
           userItems, 
         );
-        console.log(res.data)
       } catch (err) {}
     };
   

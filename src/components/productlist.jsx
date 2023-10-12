@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import { Link, NavLink } from 'react-router-dom';
 import { publicRequest } from '../requestMethods';
+
 const Container = styled.div`
   background-color: #ffffff; 
   color: #6e1111; 
@@ -34,7 +35,6 @@ const ProductWrapper = styled.div`
     margin-bottom: 5px;
     gap: 10px;
    margin-right: 15px;
-    
   }
 
 `;
