@@ -10,7 +10,7 @@ import { clearCart } from '../redux/cartRedux';
 
 const Container = styled.div`
   background-color: #351010;  
-
+max-width: 2800px;
 `;
 const Wrapper = styled.div`
   display: flex;
