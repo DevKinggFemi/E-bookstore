@@ -17,10 +17,10 @@ const Wrapper = styled.div`
   gap: 10px; 
   
  @media screen and (max-width: 768px) {
-    padding: 10px;
+    padding: 0px;
     align-items: center;
     gap: 10px; 
-   width: 200px;
+   width: 190px;
   }
 `;
 
@@ -30,11 +30,12 @@ const ProductWrapper = styled.div`
   gap: 20px;
   margin-bottom: 20px;
   width: 100%;
+  overflow: hidden;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     margin-bottom: 5px;
     gap: 10px;
-   margin-right: 15px;
+   margin-right: 10px;
   }
 
 `;
