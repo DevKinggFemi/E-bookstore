@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 function App() {
   const User = useSelector(state => state.user.currentUser);
+  const TOKEN = localStorage.getItem("TOKEN")
   
 return  (
   <BrowserRouter>
@@ -20,8 +21,8 @@ return  (
   <Route path="/bookshop" element={<Bookshop/>}></Route>
   <Route path="/bookshop/:Categories" element={<Bookshop/>}></Route>
   <Route path="/products/:id" element={<Products/>}></Route>
-  <Route path="/Register"  element = {User ? <Navigate to = "/"/> : <Register/>}></Route>
-  <Route path="/Login" element = {User ? <Navigate to= "/"/> : <Login/>}></Route>
+  <Route path="/Register"  element = {TOKEN ? <Navigate to = "/"/> : <Register/>}></Route>
+  <Route path="/Login" element = {TOKEN ? <Navigate to= "/"/> : <Login/>}></Route>
   <Route path="/Items" element={<Items/>}></Route>
   <Route path="/Items/success" element={<Success/>}></Route>
   <Route path="/Items/cancel" element={<CANCEL/>}></Route>
