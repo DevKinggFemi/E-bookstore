@@ -27,7 +27,7 @@ try {
     dispatch(registerSuccess(res.data));
     localStorage.setItem('userId',res.data._id) ;
     localStorage.setItem('TOKEN',res.data.accessToken) ;   
-    console.log(res.data)
+
 }catch (err){
     dispatch(loginFailure())
 }
