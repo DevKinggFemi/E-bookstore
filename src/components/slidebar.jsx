@@ -92,9 +92,7 @@ const Slidebar = (props) => {
     // listen for Swiper events using addEventListener
     swiperElRef.current.addEventListener('progress', (e) => {
       const [swiper, progress] = e.detail;
-      
     });
-
     swiperElRef.current.addEventListener('slidechange', (e) => {
     
     });
@@ -162,10 +160,10 @@ const Slidebar = (props) => {
       navigation="true"
       pagination="true"
       scrollbar="true"
-    >
       
+    >
            {  NumFilteredProducts != 0 ? (filteredProducts.map((items) => (
-             <swiper-slide key= {items.id}>
+             <swiper-slide key= {items.id} style={{height : 380 }}>
                 <LinkButtons to = {`/products/${items._id}`}>
 
                 <Wrapper  key ={items.id}>

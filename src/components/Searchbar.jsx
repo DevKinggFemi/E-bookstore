@@ -5,7 +5,7 @@ import { publicRequest } from '../requestMethods';
 
 const Container = styled.div`
   background-color: #f4f4f4; 
-  margin-left: 8px;
+  
   overflow: hidden;
 `;
 
@@ -29,8 +29,10 @@ const FilterContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  @media (min-width: 768px) {
-    width: 25%;
+   
+   @media (max-width: 768px) {
+   width: 90%;
+   align-items:center ;
   }
 `;
 
@@ -39,6 +41,9 @@ margin-top: 10px;
   font-weight: bold;
   color: #333;
   margin-bottom: 0.5rem;
+  @media (min-width: 768px) {
+   
+  }
 `;
 
 const FilterSelect = styled.select`
@@ -47,6 +52,10 @@ const FilterSelect = styled.select`
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: white;
+  @media (max-width: 768px) {
+   width: 100%;
+   align-items:center ;
+  }
 `;
 
 
@@ -58,9 +67,13 @@ const SearchContainer = styled.div`
   border-radius: 5px;
   padding: 0.5rem;
   background-color: white;
-
   margin-top: 25px;
-  margin-right: 20px;
+  
+  @media (max-width: 768px) {
+   width: 95%;
+   align-items:center ;
+   padding: 0px;
+  }
 `;
 
 const Input = styled.input`
@@ -79,6 +92,9 @@ const SearchButton = styled.button`
   padding: 0.5rem 0.5rem;
   border-radius: 5px;
   cursor: pointer;
+     @media (max-width: 768px) {
+   height : 40px ;
+  }
 `;
 
 const SearchBars = (props) => {
