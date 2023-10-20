@@ -19,11 +19,11 @@ const [filters, setFilters] = useState('');
     <div>
       <Container>
       <Navbar/>
-      <Announcement/>
-      <SearchBars onCreate = {setFilters} />
-      <Slidebar onFilter = {filters} onCat= {cat} />
+     <Announcement/>
+     <SearchBars onCreate = {setFilters} />
+     <Slidebar onFilter = {filters} onCat= {cat} />
     
-      <Footer/>
+     <Footer/>
         </Container>
     </div>
   )

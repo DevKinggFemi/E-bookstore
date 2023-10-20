@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   align-items: center;
   gap: 1rem;
   width: 100%;
-  margin-left: 8px;
+  
   
 
   @media (max-width: 768px) {

@@ -28,7 +28,7 @@ const TitleTag = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 60px;
   padding: 20px;
   box-shadow: 0 0 2px 2px brown;
   border-radius: 8px;

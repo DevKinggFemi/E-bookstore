@@ -6,6 +6,8 @@ const Container = styled.div`
 position: relative;
 top: 80px;
 z-index: -1;
+width: 100%;
+overflow: wrap;
 `;
 
 const Textsub = styled.div`
