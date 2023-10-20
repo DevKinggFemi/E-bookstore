@@ -8,10 +8,14 @@ import { publicRequest } from '../requestMethods';
 const Container = styled.div`
   padding: 10px; 
   overflow: hidden;
+  padding-top: 10px;
   position: relative;
   z-index: -1;
-  margin-top: 100px;
+
+ @media (max-width: 768px) {
   
+  }
+
 `;
 
 const ImgContainer = styled.div`
@@ -83,9 +87,10 @@ const NullFilter = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 400px;
   font-size: 2rem;
   text-align: center;
+
 `;
 
 

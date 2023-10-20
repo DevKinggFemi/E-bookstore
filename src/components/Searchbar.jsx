@@ -7,24 +7,23 @@ const Container = styled.div`
   background-color: #f4f4f4; 
   width: 100%;
   overflow: hidden;
-  position: relative;
-  top: 80px;
-  z-index: -1;
+  
 `;
 
 const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  
   gap: 1rem;
   width: 100%;
   
-  
+  align-items: center;
 
   @media (max-width: 768px) {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+
   }
 `;
 
@@ -73,7 +72,7 @@ const SearchContainer = styled.div`
   background-color: white;
   margin-top: 40px;
   @media (max-width: 768px) {
-   width: 95%;
+   width: 100%;
    align-items:center ;
    padding: 0px;
   }

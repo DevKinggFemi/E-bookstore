@@ -109,9 +109,9 @@ const SummaryContainer = styled.div`
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  margin-top: 50px;
+  margin-top: 30px;
   width: 100%;
-  z-index: -1;
+ 
 `;
 
 const SummaryTitle = styled.h2`

@@ -22,8 +22,7 @@ const [filters, setFilters] = useState('');
      <Announcement/>
      <SearchBars onCreate = {setFilters} />
      <Slidebar onFilter = {filters} onCat= {cat} />
-    
-     <Footer/>
+   <Footer/>
         </Container>
     </div>
   )

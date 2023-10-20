@@ -9,14 +9,12 @@ import styled, {keyframes} from "styled-components";
 const Container = styled.div`
   background-color: hsl(0, 16.190476190476193%, 20.588235294117645%);
   color: white;
-  top: 20px;
+  bottom: 0;
   padding: 10px 10px;
   max-width: 2800px;
   padding-bottom: 0px;
   overflow: hidden;
-  position: relative;
-margin-bottom: 0px;
-z-index: -1;
+ 
 `;
 
 const Wrapper = styled.div`
