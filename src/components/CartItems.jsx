@@ -15,8 +15,8 @@ const Container = styled.div`
   justify-content: center;
   height: 100vh;
  padding-top: 30px;
- 
-
+ position: relative;
+z-index: -1;
 `;
 
 const TitleTag = styled.div`
