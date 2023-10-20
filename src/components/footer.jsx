@@ -11,8 +11,11 @@ const Container = styled.div`
   color: white;
   padding: 10px 10px;
   max-width: 2800px;
-  
   overflow: hidden;
+position: relative;
+z-index: -1;
+margin-bottom: 0px auto;
+
 `;
 
 const Wrapper = styled.div`
@@ -48,7 +51,7 @@ const pulseAnimation = keyframes`
     opacity: 0.5;
   }
   50% {
-    opacity: 1;
+    opacity: 0.1;
   }
   100% {
     opacity: 0.5;
@@ -61,10 +64,11 @@ align-items: center;
   font-family: 'cursive';
   font-size: 25px;
   font-weight: bold;  
+ 
   animation: ${pulseAnimation} 2s linear infinite;
     @media (max-width: 768px) { 
       font-size: 15px;
-
+     
   }
 `;
 

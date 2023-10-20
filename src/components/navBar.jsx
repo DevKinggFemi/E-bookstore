@@ -12,6 +12,7 @@ const Container = styled.div`
   background-color: #351010;  
 max-width: 2800px;
 position: fixed;
+margin: 0 auto;
 width: 100%;
 @media screen and (max-width: 768px) {
   position: fixed;
@@ -22,6 +23,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
+  
 @media screen and (max-width: 768px) {
   height: 80px;
  
@@ -79,6 +81,7 @@ margin-top: 5px;
     text-align: center;
    margin-right: 0;
    transform: translateX(-100%);
+   z-index: 1000;
     display: ${(props) => (props.mobile ? 'none' : 'inline')};
   }
 `;
@@ -106,21 +109,20 @@ const CloseMenu = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
     display: flex ;
-  position: absolute;
+  position: fixed;
  left: 0px;
  top: 0px;
   width: 95%;
-   
   background-color: #351010;
   height: 100vh;
   padding-top: 30px;
   padding-left: 5%;
   transition: color 0.9s ease-in;
-
+  transform: translateX(0);
     font-size: 20px;
     cursor: pointer;
     color:white;
- 
+    z-index: 2;
   }
 `;
 
