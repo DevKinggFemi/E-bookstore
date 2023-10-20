@@ -10,6 +10,7 @@ const Container = styled.div`
   color: #6e1111;
   height : fit-content;
   min-height: 100vh;
+  padding-top: 100px;
 `;
 const Wrapper = styled.div`
   padding: 40px;

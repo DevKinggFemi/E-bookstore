@@ -15,6 +15,8 @@ const Container = styled.div`
   justify-content: center;
   height: 100vh;
  min-height: fit-content;
+ padding-top: 50px;
+
 `;
 
 const TitleTag = styled.div`
@@ -107,8 +109,9 @@ const SummaryContainer = styled.div`
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
-  margin-top: 20px;
+  margin-top: 50px;
   width: 100%;
+  
 `;
 
 const SummaryTitle = styled.h2`
@@ -184,6 +187,7 @@ const CartItems = () => {
         <SummaryTitle>Cart Summary</SummaryTitle>
         <p>Total Items: {cart.quantity}</p>
         <p>Total Price: ${cart.total}</p>
+        {cart.total? 
         <StripeCheckout
           stripeKey={KEY}
           name="Book Shop"
@@ -194,6 +198,7 @@ const CartItems = () => {
           token={onToken}
           disabled ={!user || cart.total === 0}
         />
+: null}
       </SummaryContainer>
     </Container>
   );

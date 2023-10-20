@@ -11,7 +11,12 @@ import { clearCart } from '../redux/cartRedux';
 const Container = styled.div`
   background-color: #351010;  
 max-width: 2800px;
-
+position: fixed;
+width: 100%;
+@media screen and (max-width: 768px) {
+  position: fixed;
+  width: 100%;
+  }
 `;
 const Wrapper = styled.div`
   display: flex;
@@ -19,6 +24,7 @@ const Wrapper = styled.div`
   width: 100%;
 @media screen and (max-width: 768px) {
   height: 80px;
+ 
   }  
 `;
 
