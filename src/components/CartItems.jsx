@@ -14,9 +14,9 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   height: 100vh;
- padding-top: 30px;
+ padding-top: 50px;
  position: relative;
-z-index: -1;
+ z-index: -1;
 `;
 
 const TitleTag = styled.div`
@@ -111,7 +111,7 @@ const SummaryContainer = styled.div`
   border-radius: 8px;
   margin-top: 50px;
   width: 100%;
-  
+  z-index: -1;
 `;
 
 const SummaryTitle = styled.h2`

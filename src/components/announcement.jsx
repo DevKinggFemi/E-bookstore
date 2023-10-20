@@ -2,12 +2,17 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import bookimage from "../storage/d4.png";
 
-const Container = styled.div``;
+const Container = styled.div`
+position: relative;
+top: 80px;
+z-index: -1;
+`;
 
 const Textsub = styled.div`
   margin-top: 10px;
   font-size: 20px;
   color: white;
+
 `;
 
 const Wrapper = styled.div`

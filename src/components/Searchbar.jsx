@@ -5,8 +5,11 @@ import { publicRequest } from '../requestMethods';
 
 const Container = styled.div`
   background-color: #f4f4f4; 
-  
+  width: 100%;
   overflow: hidden;
+  position: relative;
+  top: 80px;
+  z-index: -1;
 `;
 
 const Wrapper = styled.div`

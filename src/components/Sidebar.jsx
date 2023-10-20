@@ -9,7 +9,7 @@ const Container = styled.div`
   min-height: fit-content;
   padding-top: 100px;
   @media screen and (max-width: 768px) {
-    padding-top: 100px;
+    padding-top: 80px;
    
   width: 150px ;
   }

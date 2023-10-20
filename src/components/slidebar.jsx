@@ -8,8 +8,10 @@ import { publicRequest } from '../requestMethods';
 const Container = styled.div`
   padding: 10px; 
   overflow: hidden;
- position: relative;
- z-index: -1;
+  position: absolute;
+  z-index: -1;
+  margin-top: 100px;
+  width: 100%;
 `;
 
 const ImgContainer = styled.div`

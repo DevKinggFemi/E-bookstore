@@ -9,13 +9,14 @@ import styled, {keyframes} from "styled-components";
 const Container = styled.div`
   background-color: hsl(0, 16.190476190476193%, 20.588235294117645%);
   color: white;
+  top: 500px;
   padding: 10px 10px;
   max-width: 2800px;
+  padding-bottom: 0px;
   overflow: hidden;
-position: relative;
+  position: relative;
+margin-bottom: 0px;
 z-index: -1;
-margin-bottom: 0px auto;
-
 `;
 
 const Wrapper = styled.div`
@@ -31,7 +32,6 @@ const BodyText = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-
   @media   (max-width: 768px) {
     text-align: center;
     
