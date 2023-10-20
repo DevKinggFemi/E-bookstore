@@ -6,6 +6,7 @@ const Container = styled.div`
   background-color: #f5f5f5;
   padding: 10px;
   width: 300px ;
+  min-height: fit-content;
   @media screen and (max-width: 768px) {
     padding: 5px;
   width: 150px ;

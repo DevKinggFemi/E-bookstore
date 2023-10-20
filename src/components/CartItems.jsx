@@ -13,6 +13,8 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  height: 100vh;
+ min-height: fit-content;
 `;
 
 const TitleTag = styled.div`

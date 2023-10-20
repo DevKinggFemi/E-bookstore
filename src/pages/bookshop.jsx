@@ -8,7 +8,9 @@ import Footer from "../components/footer"
 const Container = styled.div`
   max-width: 2800px;
   width: 100%;
+  height: 100vh;
   @media screen and (max-width: 768px) {
+  
    
   }
 `;

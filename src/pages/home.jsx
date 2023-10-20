@@ -1,12 +1,11 @@
 import Announcement from '../components/announcement';
 import Navbar from '../components/navBar';
-import Searchbars from '../components/Searchbar';
+
 import Slidebar from '../components/slidebar';
 import styled from 'styled-components';
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Footer from "../components/footer"
-import Sidebar from '../components/Sidebar';
 import SearchBars from '../components/Searchbar';
 const Container = styled.div`
 max-width: 2800px;
@@ -21,8 +20,9 @@ const [filters, setFilters] = useState('');
       <Container>
       <Navbar/>
       <Announcement/>
-      <Searchbars/>
-      <Slidebar/>
+      <SearchBars onCreate = {setFilters} />
+      <Slidebar onFilter = {filters} onCat= {cat} />
+    
       <Footer/>
         </Container>
     </div>

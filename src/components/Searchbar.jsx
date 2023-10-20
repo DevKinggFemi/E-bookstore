@@ -31,7 +31,7 @@ const FilterContainer = styled.div`
   flex-direction: column;
    
    @media (max-width: 768px) {
-   width: 90%;
+   width: 95%;
    align-items:center ;
   }
 `;
@@ -63,12 +63,12 @@ const SearchContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.1rem;
+  width: 95%;
   border: 1px solid #ccc;
   border-radius: 5px;
-  padding: 0.5rem;
+
   background-color: white;
-  margin-top: 25px;
-  
+  margin-top: 40px;
   @media (max-width: 768px) {
    width: 95%;
    align-items:center ;
@@ -87,7 +87,8 @@ const SearchButton = styled.button`
   color: white;
   border: none;
   display: flex;
-  align-items: end;
+  align-items: center;
+  height: 33px;
   flex-direction: row;
   padding: 0.5rem 0.5rem;
   border-radius: 5px;
@@ -110,7 +111,9 @@ const SearchBars = (props) => {
     setFilters({
       ...filters,
       [name]: value,
+      
     });
+    
     onCreate({ ...filters, [name]: value });
   
  

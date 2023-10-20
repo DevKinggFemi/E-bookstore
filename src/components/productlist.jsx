@@ -7,8 +7,9 @@ import { publicRequest } from '../requestMethods';
 
 const Container = styled.div`
   background-color: #ffffff; 
-  color: #6e1111; 
- 
+  color: #6e1111;
+  height : fit-content;
+  min-height: 100vh;
 `;
 const Wrapper = styled.div`
   padding: 40px;

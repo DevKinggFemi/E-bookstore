@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import bookimage from "../storage/d1.png";
+import bookimage from "../storage/d4.png";
 
 const Container = styled.div``;
 

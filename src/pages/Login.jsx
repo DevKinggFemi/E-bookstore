@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { Register, login } from '../redux/apiCalls';
-import bookimage from "../storage/d5.png";
+import bookimage from "../storage/back.png";
 
 
 import { fetchCart } from '../redux/apiCalls';
 const Container = styled.div`
-  width: 100vw;
-  min-height: 100vh;
+
+background-size: cover;
+min-height: 100vh;
+min-width: fit-content;
   justify-content: center;
   align-items: center;
   max-width: 2800px;
@@ -18,8 +20,9 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   box-shadow: 0 0 2px 2px rgb(255, 166, 0, 0.9);
-  width: 90%;
-  max-width: 400px;
+  width: 30%;
+  height: 100%;
+  min-width: 400px;
   min-height: 380px;
   align-items: center;
   text-align: center;

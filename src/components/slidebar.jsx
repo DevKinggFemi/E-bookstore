@@ -84,10 +84,11 @@ const NullFilter = styled.div`
   text-align: center;
 `;
 
-register();
-const Slidebar = (props) => {
-  const swiperElRef = useRef(null);
 
+const Slidebar = (props) => {
+  register();
+  const swiperElRef = useRef(true);
+  const { onFilter } = props;
   useEffect(() => {
     // listen for Swiper events using addEventListener
     swiperElRef.current.addEventListener('progress', (e) => {
@@ -96,9 +97,9 @@ const Slidebar = (props) => {
     swiperElRef.current.addEventListener('slidechange', (e) => {
     
     });
-  }, []);
+  }, [onFilter]);
 
-  const { onFilter } = props;
+
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [NumFilteredProducts,setNumFilteredProducts] = useState("");
@@ -139,16 +140,16 @@ const Slidebar = (props) => {
     }
   }, [products, onFilter]);
   const slidesPerView = getSlidesPerView(NumFilteredProducts);
-
-  function getSlidesPerView(numFilteredProducts) {
+console.log(NumFilteredProducts)
+  function getSlidesPerView(NumFilteredProducts) {
     if (window.innerWidth <= 768) {
       return 1;
-    } else if (numFilteredProducts > 4) {
+    } else if (NumFilteredProducts > 4) {
       return 3;
-    } else if (numFilteredProducts === 0) {
+    } else if (NumFilteredProducts === 0) {
       return 1;
     } else {
-      return numFilteredProducts;
+      return NumFilteredProducts;
     }
   }
   return (
@@ -158,11 +159,11 @@ const Slidebar = (props) => {
       ref={swiperElRef}
    slides-per-view= {slidesPerView}   
       navigation="true"
-      pagination="true"
-      scrollbar="true"
+      pagination={NumFilteredProducts}
+      
       
     >
-           {  NumFilteredProducts != 0 ? (filteredProducts.map((items) => (
+           {  NumFilteredProducts !== 0 ? (filteredProducts.map((items) => (
              <swiper-slide key= {items.id} style={{height : 380 }}>
                 <LinkButtons to = {`/products/${items._id}`}>
 

@@ -9,7 +9,7 @@ import styled, {keyframes} from "styled-components";
 const Container = styled.div`
   background-color: hsl(0, 16.190476190476193%, 20.588235294117645%);
   color: white;
-  padding: 20px 10px;
+  padding: 10px 10px;
   max-width: 2800px;
   
   overflow: hidden;
