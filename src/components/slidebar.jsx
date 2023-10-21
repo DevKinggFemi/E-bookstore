@@ -127,16 +127,17 @@ const Slidebar = (props) => {
     };
     getProducts();
   }, [onFilter]);
-  
+  console.log(onFilter)
   useEffect(() => {
-    if (onFilter ) {
+    if (onFilter.Author || onFilter.Categories ) {
       setFilteredProducts(
         products.filter((item) =>
           Object.entries(onFilter).every(([key, value]) =>
             item[key].includes(value)
           )
           )
-          ) 
+          )
+
           setNumFilteredProducts(
             products.filter((item) =>
               Object.entries(onFilter).every(([key, value]) =>
@@ -145,11 +146,16 @@ const Slidebar = (props) => {
               ).length
                )   
     }
+    else if (!onFilter.Author || !onFilter.Categories ) {
+      setFilteredProducts(products)
+      setNumFilteredProducts(products.length)
+    }
     else {
       setFilteredProducts(products)
      setNumFilteredProducts(products.length)
     }
   }, [products, onFilter]);
+  console.log(onFilter)
   const slidesPerView = getSlidesPerView(NumFilteredProducts);
 console.log(NumFilteredProducts)
   function getSlidesPerView(NumFilteredProducts) {
@@ -171,7 +177,6 @@ console.log(NumFilteredProducts)
    slides-per-view= {slidesPerView}   
       navigation="true"
       pagination={NumFilteredProducts}
-      
       
     >
            {  NumFilteredProducts !== 0 ? (filteredProducts.map((items) => (
