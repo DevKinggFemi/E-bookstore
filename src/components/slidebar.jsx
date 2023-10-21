@@ -127,7 +127,7 @@ const Slidebar = (props) => {
     };
     getProducts();
   }, [onFilter]);
-  console.log(onFilter)
+  
   useEffect(() => {
     if (onFilter.Author || onFilter.Categories ) {
       setFilteredProducts(
@@ -155,9 +155,9 @@ const Slidebar = (props) => {
      setNumFilteredProducts(products.length)
     }
   }, [products, onFilter]);
-  console.log(onFilter)
+  
   const slidesPerView = getSlidesPerView(NumFilteredProducts);
-console.log(NumFilteredProducts)
+
   function getSlidesPerView(NumFilteredProducts) {
     if (window.innerWidth <= 768) {
       return 1;

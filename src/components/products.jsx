@@ -128,7 +128,7 @@ const CartButton = styled.button`
   @media (max-width: 768px) {
     width: 80px;
   height: 80px;
-  margin-left: 40px;
+  margin-left: 10px;
   display: flex;
   flex-direction: column;
   }
