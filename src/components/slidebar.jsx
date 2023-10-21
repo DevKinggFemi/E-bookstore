@@ -6,11 +6,12 @@ import { NavLink } from 'react-router-dom';
 import { publicRequest } from '../requestMethods';
 
 const Container = styled.div`
-  padding: 10px; 
+  
   overflow: hidden;
   padding-top: 10px;
   position: relative;
-  z-index: -1;
+  z-index: 1;
+  padding-top: 30px ;
 
  @media (max-width: 768px) {
   
@@ -81,6 +82,7 @@ const LinkButtons = styled(NavLink)`
     color: #ff6600;
     opacity: 0.8;
   }
+ 
 `;
 
 const NullFilter = styled.div`

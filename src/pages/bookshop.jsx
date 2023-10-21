@@ -10,13 +10,12 @@ const Container = styled.div`
   width: 100%;
   height: 100vh;
   @media screen and (max-width: 768px) {
-  
-   
   }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
+  width: 100%;
 `;
 
 const SidebarWrapper = styled.div`

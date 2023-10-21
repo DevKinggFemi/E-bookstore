@@ -12,12 +12,11 @@ const Container = styled.div`
   background-color: #351010;  
 max-width: 2800px;
 position: fixed;
-z-index: 1;
+z-index: 2;
 margin: 0 auto;
 width: 100%;
 @media screen and (max-width: 768px) {
-  position: fixed;
-  width: 100%;
+  
   }
 `;
 const Wrapper = styled.div`
@@ -49,12 +48,8 @@ const Topright = styled.div`
  
  @media screen and (max-width: 768px) {
    flex-direction: column;
-   
   margin-left: 50%;
    width: 100%;
-
-   height: 100vh;
-  
   }
 `;
 const Left = styled.div`

@@ -13,10 +13,10 @@ const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 100vh;
- padding-top: 50px;
- position: relative;
- z-index: -1;
+ min-height:100vh;
+
+ padding-top: 100px;
+ 
 `;
 
 const TitleTag = styled.div`
@@ -28,7 +28,7 @@ const TitleTag = styled.div`
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  margin-top: 60px;
+  margin-top: 30px;
   padding: 20px;
   box-shadow: 0 0 2px 2px brown;
   border-radius: 8px;

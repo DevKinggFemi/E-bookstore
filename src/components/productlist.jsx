@@ -19,10 +19,10 @@ const Wrapper = styled.div`
   gap: 10px; 
   
  @media screen and (max-width: 768px) {
-    padding: 0px;
+    padding: 5px;
     align-items: center;
     gap: 10px; 
-   width: 190px;
+   width: 100%;
   }
 `;
 

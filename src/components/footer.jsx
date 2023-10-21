@@ -12,9 +12,12 @@ const Container = styled.div`
   bottom: 0;
   padding: 10px 10px;
   max-width: 2800px;
-  padding-bottom: 0px;
+  
   overflow: hidden;
- 
+ position: relative;
+bottom: 0px;
+right: 0px;
+z-index: -1;
 `;
 
 const Wrapper = styled.div`

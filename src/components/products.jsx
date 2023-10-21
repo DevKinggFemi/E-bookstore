@@ -27,9 +27,10 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 20px;
+ padding-left: 10px;
+ padding-right: 20px;
   max-width: 2800px;
-  margin: 0 auto;
+padding-top: 100px;
   overflow: hidden;
 `;
 
@@ -102,24 +103,6 @@ const ButtonContainer = styled.div`
   margin-top: 30px;
 `;
 
-const BuyButton = styled.button`
-  width: 150px;
-  height: 50px;
-  background-color: #ff6600;
-  border: none;
-  border-radius: 30px;
-  color: white;
-  font-weight: bold;
-  transition: background-color 0.3s;
-  @media (max-width: 768px) {
-    width: 90px;
-  height: 80px;
-  }
-  cursor: pointer;
-  &:hover {
-    background-color: #ff8000;
-  }
-`;
 
 const CartContainer = styled.div`
   display: flex;
@@ -145,7 +128,7 @@ const CartButton = styled.button`
   @media (max-width: 768px) {
     width: 80px;
   height: 80px;
-  margin-left: 5px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
   }
@@ -234,9 +217,7 @@ const QuantityText = styled.div`
   font-size: 18px;
 `;
 
-const AuthNameDes = styled.div`
-  font-weight: bold;
-`;
+
 
 const Products = () => {
   const { id } = useParams();

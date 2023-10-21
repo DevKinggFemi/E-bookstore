@@ -62,6 +62,9 @@ const Input = styled.input`
   outline: none;
   flex: 1;
   user-select: none;
+  -moz-user-select: none;
+  -webkit-text-select :none;
+  -webkit-user-select: none;
 `;
 
 const Agreement = styled.div`
