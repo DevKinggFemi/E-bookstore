@@ -32,6 +32,7 @@ const Wrapper = styled.div`
   max-width: 2800px;
 padding-top: 100px;
   overflow: hidden;
+  
 `;
 
 const Image = styled.img`

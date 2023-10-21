@@ -22,7 +22,7 @@ const Wrapper = styled.div`
     padding: 5px;
     align-items: center;
     gap: 10px; 
-   width: 100%;
+   width: 190px;
   }
 `;
 
