@@ -14,7 +14,7 @@ const Container = styled.div`
   overflow: hidden;
   @media screen and (max-width: 768px) {
    padding-top : 20px;
-   padding-left: 30px;
+   padding-left: 15px;
   }
 `;
 
