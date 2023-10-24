@@ -65,6 +65,10 @@ text-align: center;
 const FilterButton = styled.button`
 display: none;
 @media screen and (max-width: 768px) {
+  transform: translateX(0%);
+ 
+  position: fixed;
+  z-index: 2;
  display: flex;
   width: 100%;
   border: none;

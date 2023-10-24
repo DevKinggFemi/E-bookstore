@@ -13,7 +13,7 @@ const Container = styled.div`
   padding-right: 10px;
   overflow: hidden;
   @media screen and (max-width: 768px) {
-   padding-top : 20px;
+   padding-top : 40px;
    padding-left: 15px;
   }
 `;
