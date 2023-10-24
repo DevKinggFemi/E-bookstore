@@ -39,6 +39,7 @@ flex-direction: column;
 @media screen and (max-width: 768px) {
   display: ${(props) => (props.mobile ? 'none' : 'inline')};
   width: 100%;
+  margin-top: 40px;
   transition: height 5s ease-in;
   transform: translateX(0%);
   position: fixed;
