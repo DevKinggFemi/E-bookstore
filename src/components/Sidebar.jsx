@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { publicRequest, userRequest } from '../requestMethods';
 import styled from 'styled-components';
 
+import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons';
+
 const Container = styled.div`
   background-color: none;
  
@@ -24,6 +26,11 @@ font-size: 12px;
     display: none;
  
   }
+`;
+const Arrow = styled.div`
+margin-top: -2px;
+
+  
 `;
 
 const SubTextContainer = styled.div `
@@ -110,7 +117,7 @@ const Sidebar = ({ onCreate }) => {
     <Container>
       <Text><p>STORE</p>
          <p>CATEGORIES</p></Text>
-         <FilterButton   onClick={toggleFilter}>Filter Options</FilterButton>
+         <FilterButton   onClick={toggleFilter}>Filter Options {filterOpen? <Arrow><ArrowDropDown/></Arrow>: <Arrow><ArrowDropUp/></Arrow>} </FilterButton>
        <SubTextContainer  mobile= {filterOpen}>
         {bookStoreCategories.map((BookshopCategories) => (
           <Subtext
