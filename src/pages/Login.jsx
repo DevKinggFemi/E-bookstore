@@ -10,20 +10,22 @@ import { fetchCart } from '../redux/apiCalls';
 const Container = styled.div`
   background-size: cover;
   min-height: 100vh;
-  min-width: fit-content;
+  width: 100%;
   justify-content: center;
   align-items: center;
   max-width: 2800px;
+  overflow: hidden;
   display: flex;
   background-image: url(${bookimage});
+  @media screen and (max-width: 768px) {
+  
+  }
 `;
 
 const Wrapper = styled.div`
   box-shadow: 0 0 2px 2px rgb(255, 166, 0, 0.9);
   width: 30%;
   height: 100%;
-  min-width: 400px;
-  min-height: 380px;
   align-items: center;
   text-align: center;
   justify-content: center;
@@ -32,6 +34,10 @@ const Wrapper = styled.div`
   background-color: #ffffffe1;
   padding: 20px;
   border-radius: 10px;
+  @media screen and (max-width: 768px) {
+width: 70%;
+
+  }
 `;
 
 const Button = styled.button`

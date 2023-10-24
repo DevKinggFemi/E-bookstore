@@ -57,7 +57,7 @@ text-align: center;
   border: none;
   font-size: 14px; 
   background-color: white;
-  transition: background-color 0.2s, color 0.2s;
+  transition:  0.2s, color 0.2s;
   &:hover {
     background-color: #ffe0b2;
     color: rgb(255, 102, 0, 0.8);
