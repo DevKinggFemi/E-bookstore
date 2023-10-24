@@ -35,8 +35,7 @@ const Wrapper = styled.div`
   padding: 20px;
   border-radius: 10px;
   @media screen and (max-width: 768px) {
-width: 100%;
-
+width: 90%;
   }
 `;
 
