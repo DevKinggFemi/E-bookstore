@@ -69,7 +69,7 @@ display: none;
   transform: translateX(0%);
  
   position: fixed;
-  z-index: 2;
+  z-index: 1;
  display: flex;
   width: 100%;
   border: none;
