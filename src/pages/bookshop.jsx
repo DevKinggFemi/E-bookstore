@@ -16,14 +16,17 @@ const Container = styled.div`
 const ContentWrapper = styled.div`
   display: flex;
   width: 100%;
+  @media screen and (max-width: 768px) {
+  flex-direction: column;
+
+  }
 `;
 
 const SidebarWrapper = styled.div`
   width: 40%;
   background-color: hsl(0, 0%, 100%);
   @media screen and (max-width: 768px) {
-    width: 30%;
-    align-items: center;
+  width: 100%;
   }
 `;
 
@@ -32,7 +35,8 @@ const MainContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+  @media screen and (max-width: 768px) {
+  }
 `;
 
 
@@ -41,7 +45,7 @@ const SlideWrapper = styled.div`
 width: 100%;
 margin-top: 20px;
 @media screen and (max-width: 768px) {
-    width: 60%;
+
   }
 `;
 
@@ -60,7 +64,6 @@ const Bookshop = () => {
         </SidebarWrapper>
         <MainContentWrapper>
         <SlideWrapper>
-     
      <Productlist  locationCategory= {locationCategory} selectCategories={selectedCategories}  />
    </SlideWrapper>
         </MainContentWrapper>

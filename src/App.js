@@ -17,6 +17,7 @@ function App() {
 return  (
   <BrowserRouter>
 <Routes>
+
   <Route exact path="/" element={<Home/>}></Route>
   <Route path="/bookshop" element={<Bookshop/>}></Route>
   <Route path="/bookshop/:Categories" element={<Bookshop/>}></Route>

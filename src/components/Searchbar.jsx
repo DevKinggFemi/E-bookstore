@@ -14,12 +14,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  
   gap: 1rem;
   width: 100%;
-  
   align-items: center;
-
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: center;
@@ -31,7 +28,7 @@ const FilterContainer = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-   
+   padding-left: 10px;
    @media (max-width: 768px) {
    width: 95%;
    align-items:center ;

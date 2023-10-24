@@ -3,14 +3,16 @@ import { publicRequest, userRequest } from '../requestMethods';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  background-color: #f5f5f5;
-  padding: 10px;
-  width: 300px ;
+  background-color: none;
+ 
+  width: 80% ;
   min-height: fit-content;
   padding-top: 100px;
-  @media (max-width: 768px) {
-    display: none;
-  
+  overflow: hidden;
+  @media screen and  (max-width: 768px) {
+width: 100%;
+padding-top: 80px;
+padding-left: 0px;
   }
 `;
 
@@ -18,15 +20,27 @@ const Text = styled.div`
   font-family: cursive;
 font-size: 12px;
   text-align: center;
-
+  @media screen and  (max-width: 768px) {
+    display: none;
+ 
+  }
 `;
 
 const SubTextContainer = styled.div `
-display: flex;
+display:flex;
 flex-direction: column;
-
-
+@media screen and (max-width: 768px) {
+  display: ${(props) => (props.mobile ? 'none' : 'inline')};
+  width: 100%;
+  transition: height 5s ease-in;
+  transform: translateX(0%);
+  position: fixed;
+  height: 100vh;
+  background-color: white;  
+   z-index: 1;
+  }
 `;
+
 const Subtext = styled.button`
 text-align: center;
   margin-top: 10px;
@@ -41,11 +55,27 @@ text-align: center;
     color: rgb(255, 102, 0, 0.8);
   }
 `;
+const FilterButton = styled.button`
+display: none;
+@media screen and (max-width: 768px) {
+ display: flex;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  background-color: rgb(255, 102, 0);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  &:hover {
+    background-color: rgba(255, 102, 0, 0.829);
+  }
+}
+`;
 
 const Sidebar = ({ onCreate }) => {
   const [newCategories, setNewCategories] = useState('');
   const [bookStoreCategories, setBookStoreCategories] = useState([]);
-
+ const [filterOpen, setFilterOpen] = useState(true); 
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -64,20 +94,27 @@ const Sidebar = ({ onCreate }) => {
     getProducts();
   }, [newCategories]);
 
+  const toggleFilter = () => {
+    // Toggle the filter options open/close
+    setFilterOpen(!filterOpen);
+    
+  };
+
   const handleChange = (selectedCategory) => {
     setNewCategories(selectedCategory);
     onCreate(selectedCategory);
+    setFilterOpen(true);
   };
 
   return (
     <Container>
       <Text><p>STORE</p>
          <p>CATEGORIES</p></Text>
-      
-         <SubTextContainer>
-
+         <FilterButton   onClick={toggleFilter}>Filter Options</FilterButton>
+       <SubTextContainer  mobile= {filterOpen}>
         {bookStoreCategories.map((BookshopCategories) => (
           <Subtext
+          mobile= {filterOpen}
           key={BookshopCategories}
           onClick={() => handleChange(BookshopCategories)}
           >
